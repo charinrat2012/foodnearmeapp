@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:food_near_me_app/views/navbar.dart';
 import 'package:get/get.dart';
 
+import '../controllers/scrollctrl.dart';
+import '../widgets/matwid/back_bt.dart';
+import '../widgets/matwid/scrolltotop_bt.dart';
 
-import 'controllers/scrollctrl.dart'; // ตรวจสอบว่า controller เหล่านี้มีอยู่จริง
 
-import 'widgets/matwid/back_bt.dart';
-import 'widgets/matwid/scrolltotop_bt.dart'; // ตรวจสอบว่าไฟล์นี้มีอยู่จริง
+
+// ตรวจสอบว่าไฟล์นี้มีอยู่จริง
 
 class MyprofileUi extends StatelessWidget {
   const MyprofileUi({Key? key}) : super(key: key);

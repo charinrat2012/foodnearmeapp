@@ -1,37 +1,25 @@
-// lib/views/myshop_ui.dart
 import 'package:flutter/material.dart';
 import 'package:food_near_me_app/widgets/myshopwid/shoplist.dart';
 import 'package:get/get.dart';
 
-// Import Controllers
 import '../controllers/detailctrl.dart';
-import '../controllers/myshopctrl.dart';
+
 import '../controllers/scrollctrl.dart';
 
-
-// Import Widgets
 import 'details_ui.dart';
 import 'login_ui.dart';
 
 import '../widgets/matwid/scrolltotop_bt.dart';
-// import 'widgets/matwid/star_rating.dart'; // ไม่ใช้แล้วเพราะ MyShopCard จัดการเอง
-// import 'widgets/matwid/statustag.dart'; // ไม่ใช้แล้ว
-
-// *** Import MyShopCard ที่สร้างใหม่ ***
 
 import '../widgets/myshopwid/shopcard.dart';
-
-// Helper Widget สำหรับขอบ Gradient (ถ้าคุณต้องการ)
-// ควรย้ายไปอยู่ในไฟล์แยกต่างหาก (เช่น common/gradient_border.dart)
-// ถ้าไม่ใช้ gradient border กับ MyShopCard ก็สามารถลบ class นี้ออกได้
 
 class MyshopUi extends StatelessWidget {
   const MyshopUi({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ScrollpageController scrollpageController = Get.find<ScrollpageController>();
-    // Get.put(MyshopController()); // ไม่ต้อง Get.put MyShopController ที่นี่แล้ว
+    final ScrollpageController scrollpageController =
+        Get.find<ScrollpageController>();
 
     return GestureDetector(
       onTap: () {
@@ -71,10 +59,7 @@ class MyshopUi extends StatelessWidget {
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Colors.pink[200]!,
-                  Colors.blue[200]!,
-                ],
+                colors: [Colors.pink[200]!, Colors.blue[200]!],
                 begin: Alignment.centerLeft,
                 transform: GradientRotation(3.0),
                 end: Alignment.centerRight,
@@ -84,10 +69,9 @@ class MyshopUi extends StatelessWidget {
         ),
         body: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Colors.blue[200]!,
-              Colors.pink[200]!,
-            ]),
+            gradient: LinearGradient(
+              colors: [Colors.blue[200]!, Colors.pink[200]!],
+            ),
           ),
           child: Stack(
             children: [
@@ -111,19 +95,18 @@ class MyshopUi extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              
-
-                              // *** วนลูป Shoplist.shopList และส่งค่าที่ถูกต้องให้ MyShopCard ***
                               ...Shoplist.shopList.map((restaurantData) {
                                 return MyShopCard(
                                   imageUrl: restaurantData['imageUrl']!,
-                                  restaurantName: restaurantData['restaurantName']!,
+                                  restaurantName:
+                                      restaurantData['restaurantName']!,
                                   description: restaurantData['description']!,
                                   rating: restaurantData['rating']!,
-                                  isOpen: restaurantData['isOpen']!, // *** ส่ง RxBool เข้าไปตรงๆ ***
-                                  showMotorcycleIcon: restaurantData['showMotorcycleIcon']!,
+                                  isOpen: restaurantData['isOpen']!,
+                                  showMotorcycleIcon:
+                                      restaurantData['showMotorcycleIcon']!,
                                   onTap: () {
-                                    Get.to(
+                                    Get.offAll(
                                       () => RestaurantDetailPageUi(
                                         restaurantId: restaurantData['id']!,
                                       ),
@@ -139,7 +122,7 @@ class MyshopUi extends StatelessWidget {
                                   },
                                 );
                               }).toList(),
-                              const SizedBox(height: 80), // เพิ่มระยะห่างด้านล่างสุด
+                              const SizedBox(height: 80),
                             ],
                           ),
                         ),

@@ -18,7 +18,7 @@ class LoginController extends GetxController {
         'กรุณากรอกข้อมูลให้ครบถ้วน',
         snackPosition: SnackPosition.TOP,
         colorText: Colors.white,
-        backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+        backgroundColor: Colors.red,
       );
       return;
     } else if (!emailController.text.isEmail) {
@@ -28,7 +28,7 @@ class LoginController extends GetxController {
         'กรุณากรอกอีเมลให้ถูกต้อง',
         snackPosition: SnackPosition.TOP,
         colorText: Colors.white,
-        backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+        backgroundColor: Colors.red,
       );
       return;
     } else if (emailController.text != email ||
@@ -39,7 +39,8 @@ class LoginController extends GetxController {
         'รหัสผ่านหรืออีเมลของคุณไม่ถูกต้อง ',
         snackPosition: SnackPosition.TOP,
         colorText: Colors.white,
-        backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+        backgroundColor: Colors.red,
+     
       );
       return;
     }

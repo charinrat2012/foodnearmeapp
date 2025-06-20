@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../navbar.dart';
+import '../../views/navbar.dart';
+
+
 class BackBt extends StatelessWidget {
   const BackBt({super.key});
    @override

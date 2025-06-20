@@ -129,7 +129,7 @@ class HomeUi extends StatelessWidget {
                                       restaurantData['showMotorcycleIcon']!,
                                   onTap: () {
                                     // ใช้ Get.to พร้อม BindingsBuilder เพื่อจัดการ Controller lifecycle
-                                    Get.to(
+                                    Get.offAll(
                                       () => RestaurantDetailPageUi(
                                             restaurantId: restaurantData['id']!,
                                           ),

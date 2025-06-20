@@ -49,7 +49,8 @@ class OtpCotroller extends GetxController {
         'กรุณากรอกข้อมูลให้ครบถ้วน',
         snackPosition: SnackPosition.TOP,
         colorText: Colors.white,
-        backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+        backgroundColor: Colors.red,
+     
       );
     } else if (enteredOtp != otp) {
       Get.closeAllSnackbars();
@@ -58,7 +59,8 @@ class OtpCotroller extends GetxController {
         'รหัสผ่านไม่ถูกต้อง',
         snackPosition: SnackPosition.TOP,
         colorText: Colors.white,
-        backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+        backgroundColor: Colors.red,
+      
       );
       return;
     }

@@ -20,7 +20,8 @@ class RegisterController extends GetxController {
           'กรูณากรอกข้อมูลให้ครบถ้วน',
           snackPosition: SnackPosition.TOP,
           colorText: Colors.white,
-          backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+          backgroundColor: Colors.red,
+      
       );
       return;
     } else if (!emailController.text.isEmail) {
@@ -30,7 +31,8 @@ class RegisterController extends GetxController {
           'กรูณากรอกอีเมลให้ถูกต้อง',
           snackPosition: SnackPosition.TOP,
           colorText: Colors.white,
-          backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+          backgroundColor: Colors.red,
+      
       );
       return;
     }  else if (passwordController.text.length < 6) {
@@ -40,7 +42,8 @@ class RegisterController extends GetxController {
           'กรูณากรอกรหัสผ่านอย่างน้อย 6 ตัวอักษร',
           snackPosition: SnackPosition.TOP,
           colorText: Colors.white,
-          backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+          backgroundColor: Colors.red,
+      
       );
       return;
     } else if (passwordController.text != confirmPasswordController.text) {
@@ -50,7 +53,8 @@ class RegisterController extends GetxController {
           'รหัสผ่านไม่ตรงกัน',
           snackPosition: SnackPosition.TOP,
           colorText: Colors.white,
-          backgroundColor: const Color.fromARGB(255, 255, 140, 131),
+          backgroundColor: Colors.red,
+      
       );
       return;
     }
