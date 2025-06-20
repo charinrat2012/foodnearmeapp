@@ -1,6 +1,6 @@
 # ร้านอาหารใกล้ฉัน
 
-A new Flutter project.
+แอปพลิเคชั่นค้นหาร้านอาหารใกล้ฉัน 
 
 ## Getting Started
 
